@@ -8,6 +8,7 @@ import FaceImage from '../components/faceimage/FaceImage';
 import Logo from '../components/logo/Logo';
 import SignIn from '../components/signin/SignIn';
 import Register from '../components/register/Register';
+import 'cors';
 
 const particlesOptions = {
   particles: { 
