@@ -8,7 +8,6 @@ import FaceImage from '../components/faceimage/FaceImage';
 import Logo from '../components/logo/Logo';
 import SignIn from '../components/signin/SignIn';
 import Register from '../components/register/Register';
-import 'cors';
 
 const particlesOptions = {
   particles: { 
@@ -78,7 +77,7 @@ class App extends React.Component {
     event.preventDefault();
     this.setState({image: this.state.input});
     fetch('https://murmuring-coast-74763.herokuapp.com/imageurl', {
-          method: 'post',
+          method: 'POST',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
             input: this.state.input
@@ -88,7 +87,7 @@ class App extends React.Component {
     .then(response => {
       if(response){
       fetch('https://murmuring-coast-74763.herokuapp.com/image', {
-          method: 'put',
+          method: 'PUT',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
             id: this.state.user.id
